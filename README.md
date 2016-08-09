@@ -1,6 +1,7 @@
 Its a websocket client library for Android
 
-API Overview
+
+**API Overview**
 
 Here's the API in a nutshell.
 
@@ -26,8 +27,8 @@ Here's the API in a nutshell.
         }, ConnectionState.ALL);
     }
     
-Implement the ConnectionEventListener interface to receive connection state change events: available events are CONNECTING, CONNECTED, DISCONNECTING, DISCONNECTED, ALL
-Connection state change will be available in onConnectionStateChange method. If there is any error when trying to connect onError metjod will be called. 
+Implement the ConnectionEventListener interface to receive connection state change events: available events are CONNECTING, CONNECTED, DISCONNECTING, DISCONNECTED, ALL. 
+Connection state changes will be available in onConnectionStateChange method. If there is any error when trying to connect onError metjod will be called. 
 
 // Subscribe to a channel
 
@@ -65,33 +66,32 @@ They are preserved across disconnection and re-established with the server on re
 // the subscription to "my-channel" still exist.
 More information in reference format can be found below.
 
-The QSocket constructor
+**The QSocket constructor**
 
-The standard constructor take an QSocketOptions instance and current context. To add Authorization 
-you can put AuthorizationToken in QSocketOptions 
+The standard constructor take an QSocketOptions instance and current context. To add Authorization, you can put AuthorizationToken in QSocketOptions 
 
     QSocketOptions options = new QSocketOptions().setAuthorizationToken("1234567890");
     QSocket qSocket = new QSocket(options, context);
 
 If you need finer control over the endpoint then the setHost, setWsPort and setWssPort methods can be employed.
 
-Connecting
+**Connecting**
 
 In order to send and receive messages you need to connect to QSocket.
 
     QSocket qSocket = new QSocket(options, context);
     qSocket.connect();
 
-Reconnecting
+**Reconnecting**
 
 The connect method is also used to re-connect in case the connection has been lost, for example if an Android device loses reception. Note that the state of channel subscriptions will be preserved while disconnected and re-negotiated with the server once a connection is re-established.
 
-Disconnecting
+**Disconnecting**
 
     qSocket.disconnect();
 After disconnection the QSocket instance will release any internally allocated resources (threads and network connections)
 
-Example Android application using SocketManager library:
+**Example Android application using SocketManager library:**
 
     public class MainActivity extends AppCompatActivity {
         private QSocket qSocket;
@@ -175,3 +175,5 @@ Example Android application using SocketManager library:
             });
         }
     }
+    
+_Note;- Also you should include 'http://clojars.org/repo' in Default Library repositiry settings in Android studio to include library. This is because org.java-websocket:java-websocket:1.3.1 library that is used for websocket integration is hosted in clojars._
