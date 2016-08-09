@@ -5,8 +5,8 @@ Its a websocket client library for Android
 
 Here's the API in a nutshell.
 
-// Create a new QSocket instance
-
+// Create a new QSocketOptions instance and a QSocket instance
+    QSocketOptions options = new QSocketOptions().setAuthorizationToken("token");
     QSocket qsocket = new QSocket(options, context);
 
 //connect to socket
