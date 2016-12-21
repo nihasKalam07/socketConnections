@@ -1,5 +1,16 @@
 Its a websocket client library for Android
 
+## Version 1.0.0
+
+## Integration
+
+The lib is available on jcenter, you can find it with 
+
+```
+dependencies {
+    compile 'com.nihaskalam.android:socket-connections:1.0.0'
+}
+```
 
 **API Overview**
 
