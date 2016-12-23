@@ -178,3 +178,21 @@ After disconnection the QSocket instance will release any internally allocated r
     }
     
 _Note;- Also you should include 'http://clojars.org/repo' in Default Library repositiry settings in Android studio to include library. This is because org.java-websocket:java-websocket:1.3.1 library that is used for websocket integration is hosted in clojars._
+
+## Licence
+
+```
+Copyright 2016 Nihas Kalam
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
